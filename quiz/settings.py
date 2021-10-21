@@ -82,6 +82,7 @@ WSGI_APPLICATION = 'quiz.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+
 DATABASES = {}
 DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 

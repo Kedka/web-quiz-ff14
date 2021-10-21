@@ -10,16 +10,23 @@ def quiz(request):
         questions=QuestionModel.objects.all()
         wrong=0
         correct=0
+        answers = []
         for q in questions:
             if q.answer == request.POST.get(q.question):
                 correct+=1
             else:
                 wrong+=1
+            answers.append(request.POST.get(q.question))
+        # print(answers)
+
+        arr = zip(answers, questions)
+        # print(list(arr))
         context = {
             'correct':correct,
             'wrong':wrong,
-            'questions':questions,
-            'check':request.POST.get(q.question)
+            'xD':arr
+            # 'questions':questions,
+            # 'check': answers
         }
         return render(request,'result.html',context)
     else:
