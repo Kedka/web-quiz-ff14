@@ -10,8 +10,6 @@
 <div class="container ">
 <h1>What the hell were they thinking</h1>
  
- <form method='post' action=''>
-    {% csrf_token %}
     {% for q  in questions%}
     <div class="form-group">
       <label for="question">{{q.question}}</label>
@@ -30,14 +28,13 @@
         <br>
     </div>    
     {% endfor %}
-  </form>
 
     <div class="container ">
         
         <div class="card-columns" style="padding: 10px; margin: 20px;">
             <div class="card" align="centre " style="width: 32rem; border:5px black solid">
                 <div class="card-body">
-                    <!-- <p class="card-text">Correct answers: {{correct}}</p> -->
+                    <p class="card-text">Correct answers: {{correct}}</p>
                     <p class="card-text">Incorrect answers: {{wrong}}</p>
                 </div>
             </div>

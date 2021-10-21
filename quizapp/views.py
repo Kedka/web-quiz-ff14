@@ -19,7 +19,7 @@ def quiz(request):
             'correct':correct,
             'wrong':wrong,
             'questions':questions,
-            # 'check':request.POST.get(q.question)
+            'check':request.POST.get(q.question)
         }
         return render(request,'result.html',context)
     else:
